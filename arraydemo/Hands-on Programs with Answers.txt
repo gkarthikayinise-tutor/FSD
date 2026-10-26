@@ -1,0 +1,192 @@
+2. Hands-on Programs with Answers
+Task 1: Display an Array Using Arrays.toString()
+Question: Create an integer array and display all its elements.
+
+Answer:
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+
+Output:
+[10, 20, 30, 40, 50]
+
+
+Task 2: Sort Array Elements Using Arrays.sort()
+Question: Sort the array elements in ascending order.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {50, 10, 40, 20, 30};
+
+        Arrays.sort(arr);
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+
+Output:
+[10, 20, 30, 40, 50]
+
+
+Task 3: Search an Element Using Arrays.binarySearch()
+Question: Find the index of 30 in a sorted array.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int index = Arrays.binarySearch(arr, 30);
+
+        System.out.println("Index: " + index);
+    }
+}
+
+
+Output:
+Index: 2
+
+
+Note: binarySearch() requires the array to be sorted for reliable search results.
+Task 4: Compare Two Arrays Using Arrays.equals()
+Question: Check whether two arrays contain the same elements in the same order.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {10, 20, 30};
+        int[] b = {10, 20, 30};
+
+        System.out.println(Arrays.equals(a, b));
+    }
+}
+
+
+Output:
+true
+
+
+Task 5: Copy an Array Using Arrays.copyOf()
+Question: Copy the first three elements into a new array.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int[] copy = Arrays.copyOf(arr, 3);
+
+        System.out.println(Arrays.toString(copy));
+    }
+}
+
+
+Output:
+[10, 20, 30]
+
+
+Task 6: Fill an Array Using Arrays.fill()
+Question: Replace every element in the array with 100.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+
+        Arrays.fill(arr, 100);
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+
+Output:
+[100, 100, 100, 100, 100]
+
+
+Task 7: Find the Sum Using Arrays.stream()
+Question: Calculate the sum of all array elements using a stream.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int sum = Arrays.stream(arr).sum();
+
+        System.out.println("Sum: " + sum);
+    }
+}
+
+
+Output:
+Sum: 150
+
+
+Task 8: Find Maximum and Minimum Using Streams
+Question: Find the largest and smallest values in an array.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {45, 12, 78, 23, 9};
+
+        int max = Arrays.stream(arr).max().getAsInt();
+        int min = Arrays.stream(arr).min().getAsInt();
+
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
+    }
+}
+
+
+Output:
+Maximum: 78
+Minimum: 9
+
+
+Task 9: Find the First Different Index Using Arrays.mismatch()
+Question: Identify the first index where two arrays differ.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {10, 20, 30, 40};
+        int[] b = {10, 20, 35, 40};
+
+        System.out.println(Arrays.mismatch(a, b));
+    }
+}
+
+
+Output:
+2
+
+
+Task 10: Compare Arrays Using Arrays.compare()
+Question: Compare two integer arrays lexicographically.
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {10, 20, 30};
+        int[] b = {10, 20, 40};
+
+        int result = Arrays.compare(a, b);
+
+        System.out.println(result);
+    }
+}
+
+
+Output:
+-1
