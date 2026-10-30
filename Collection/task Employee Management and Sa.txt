@@ -1,0 +1,44 @@
+Question: Employee Management and Salary Processing System
+
+Scenario:
+
+A company wants to develop an Employee Management System to maintain employee details, department information, and salary records using the Java Collection Framework.
+
+Requirements:
+
+1. Create an Employee class with the following attributes:
+- Employee ID
+- Employee Name
+- Department
+- Salary
+2. Use an ArrayList to store employee records.
+
+3. Add at least 5 employee records.
+
+4. Display all employee details.
+
+5. Search for an employee using Employee ID.
+
+6. Remove an employee record using Employee ID.
+
+7. Use a HashMap to store Department ID and Department Name.
+
+8. Display employees department-wise.
+
+9. Sort employees based on salary in ascending order using Collections.sort() and Comparator.
+
+10. Display the employee receiving the highest salary.
+
+Concepts to be used:
+- ArrayList
+- HashMap
+- Iterator
+- Comparator
+- Collections.sort()
+- add()
+- remove()
+- containsKey()
+- get()
+Expected Output:
+
+The program should display employee records, search results, deleted employee details, department-wise employee lists, salary-based sorting, and the highest-paid employee.

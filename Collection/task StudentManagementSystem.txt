@@ -1,0 +1,178 @@
+
+package studentmanagement;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+
+class Student {
+    int studentId;
+    String studentName;
+    String department;
+    int marks;
+
+    Student(int studentId, String studentName,
+            String department, int marks) {
+
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.department = department;
+        this.marks = marks;
+    }
+
+    void display() {
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Department: " + department);
+        System.out.println("Marks: " + marks);
+        System.out.println("-------------------------");
+    }
+}
+
+public class StudentManagementSystem {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // ArrayList to store student records
+        ArrayList<Student> students = new ArrayList<>();
+
+        // HashSet to prevent duplicate Student IDs
+        HashSet<Integer> studentIds = new HashSet<>();
+
+        // Adding student records
+        addStudent(students, studentIds,
+                new Student(101, "Arun", "CSE", 85));
+
+        addStudent(students, studentIds,
+                new Student(102, "Priya", "IT", 92));
+
+        addStudent(students, studentIds,
+                new Student(103, "Karthi", "ECE", 78));
+
+        addStudent(students, studentIds,
+                new Student(104, "Divya", "CSE", 95));
+
+        addStudent(students, studentIds,
+                new Student(105, "Rahul", "IT", 88));
+
+        // Display all students
+        System.out.println("\n===== ALL STUDENT DETAILS =====");
+
+        Iterator<Student> itr = students.iterator();
+
+        while (itr.hasNext()) {
+            Student s = itr.next();
+            s.display();
+        }
+
+        // Search student using ID
+        System.out.print("\nEnter Student ID to search: ");
+        int searchId = sc.nextInt();
+
+        boolean found = false;
+
+        for (Student s : students) {
+            if (s.studentId == searchId) {
+                System.out.println("\nStudent Found!");
+                s.display();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Student not found!");
+        }
+
+        // Duplicate student registration
+        System.out.print("\nEnter Student ID to register again: ");
+        int newId = sc.nextInt();
+
+        if (studentIds.contains(newId)) {
+            System.out.println("Duplicate Student ID!");
+            System.out.println("Registration not allowed.");
+        } else {
+            sc.nextLine();
+
+            System.out.print("Enter Student Name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Enter Department: ");
+            String dept = sc.nextLine();
+
+            System.out.print("Enter Marks: ");
+            int marks = sc.nextInt();
+
+            addStudent(students, studentIds,
+                    new Student(newId, name, dept, marks));
+
+            System.out.println("Student registered successfully!");
+        }
+
+        // Remove student using ID
+        System.out.print("\nEnter Student ID to delete: ");
+        int deleteId = sc.nextInt();
+
+        boolean deleted = false;
+
+        Iterator<Student> iterator = students.iterator();
+
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
+
+            if (s.studentId == deleteId) {
+                iterator.remove();
+                studentIds.remove(deleteId);
+                deleted = true;
+                System.out.println("Student deleted successfully!");
+                break;
+            }
+        }
+
+        if (!deleted) {
+            System.out.println("Student ID not found!");
+        }
+
+        // Display updated student records
+        System.out.println("\n===== UPDATED STUDENT DETAILS =====");
+
+        for (Student s : students) {
+            s.display();
+        }
+
+        // Find topper using Collections
+        if (!students.isEmpty()) {
+
+            Student topper = Collections.max(
+                students,
+                Comparator.comparingInt(s -> s.marks)
+            );
+
+            System.out.println("\n===== TOPPER DETAILS =====");
+            topper.display();
+        } else {
+            System.out.println("No student records available.");
+        }
+
+        sc.close();
+    }
+
+    // Method to add student and prevent duplicate IDs
+    static void addStudent(ArrayList<Student> students,
+                           HashSet<Integer> studentIds,
+                           Student student) {
+
+        if (studentIds.add(student.studentId)) {
+            students.add(student);
+        } else {
+            System.out.println(
+                "Duplicate Student ID: " + student.studentId
+            );
+        }
+    }
+}
