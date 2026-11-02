@@ -1,0 +1,15 @@
+show databases;
+
+create database FacePrep;
+
+use FacePrep;
+
+create table students(id int, name varchar(50),dept varchar(10));
+
+insert into students values(101,"karthi","Msc");
+
+select * from students;
+
+show tables from FacePrep;
+
+select * from emp;
