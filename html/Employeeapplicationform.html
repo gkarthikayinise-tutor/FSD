@@ -1,0 +1,133 @@
+<!--
+Task 2: Employee Application Form
+Scenario: A software company wants to collect job application details from candidates.
+
+Requirements:
+1. Full Name.
+2. Email Address.
+3. Phone Number.
+4. Job Role – Dropdown (Java Developer, Python Developer, Web Developer, Data Analyst).
+5. Experience – Radio buttons (Fresher, 1–2 Years, 3–5 Years, Above 5 Years).
+6. Technical Skills – Checkboxes.
+7. Upload Resume – File input.
+8. Expected Salary – Number input.
+9. Cover Letter – Textarea.
+10. Submit button.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Application Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #09fcf8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        .container {
+            background-color: rgb(202, 124, 206);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+            width: 500px;
+        }
+
+        label {
+            display: inline-block;
+            width: 160px;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Employee Application Form</h1>
+
+    <div class="container">
+
+        <form>
+
+            <label for="fullname">Full Name :</label>
+            <input type="text" id="fullname" name="fullname"><br>
+
+            <label for="email">Email Address :</label>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="phone">Phone Number :</label>
+            <input type="tel" id="phone" name="phone"><br>
+
+            <label for="role">Job Role :</label>
+            <select id="role" name="role">
+                <option value="">Select Job Role</option>
+                <option value="Java Developer">Java Developer</option>
+                <option value="Python Developer">Python Developer</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+            </select><br>
+
+            <label>Experience :</label>
+            <input type="radio" name="experience" value="Fresher">Fresher<br>
+            <label></label>
+            <input type="radio" name="experience" value="1-2 Years">1-2 Years<br>
+            <label></label>
+            <input type="radio" name="experience" value="3-5 Years">3-5 Years<br>
+            <label></label>
+            <input type="radio" name="experience" value="Above 5 Years">Above 5 Years<br>
+
+            <label>Technical Skills :</label>
+            <input type="checkbox" name="skills" value="Java">Java
+            <input type="checkbox" name="skills" value="Python">Python<br>
+
+            <label></label>
+            <input type="checkbox" name="skills" value="HTML">HTML
+            <input type="checkbox" name="skills" value="CSS">CSS<br>
+
+            <label></label>
+            <input type="checkbox" name="skills" value="JavaScript">JavaScript
+            <input type="checkbox" name="skills" value="SQL">SQL<br><br>
+
+            <label for="resume">Upload Resume :</label>
+            <input type="file" id="resume" name="resume"><br>
+
+            <label for="salary">Expected Salary :</label>
+            <input type="number" id="salary" name="salary"><br>
+
+            <label for="coverletter">Cover Letter :</label>
+            <textarea id="coverletter" name="coverletter"
+                      rows="5" cols="30"></textarea><br>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

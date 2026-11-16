@@ -1,0 +1,111 @@
+<!--Task 1: Student Registration Form
+Scenario: A college wants to collect student details through an online registration form.
+
+Requirements:
+1. Student Name – Text input.
+2. Email – Email input.
+3. Mobile Number – Tel input.
+4. Date of Birth – Date input.
+5. Gender – Radio buttons (Male, Female, Other).
+6. Department – Dropdown (CSE, IT, ECE, EEE, Mechanical).
+7. Skills – Checkboxes (Java, Python, HTML, CSS).
+8. Address – Textarea.
+9. Submit and Reset buttons.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #09fcf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: rgb(202, 124, 206);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+            width: 450px;
+        }
+
+        h1 {
+            text-align: center;
+             margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 140px;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <div class="container">
+    
+    
+    <form>
+    <label for="studentname">Student Name :</label>
+    <input type="text" id="studentname" name="studentname"/><br>
+
+    <label for="studentemail">Student Email :</label>
+    <input type="email" id="studentemail" name="studentemail"/><br>
+
+    <label for="Mobile">Mobile Number :</label>
+    <input type="tel" id="Mobile" name="Mobile"/><br>
+
+    <label for="dob">Date of Birth :</label>
+    <input type="datetime-local" id="dob" name="dob"/><br>
+
+    <label for="gender">Gender :</label>
+    <input type="radio" id="gender" name="gender" value="Male"/>Male
+    <input type="radio" id="gender" name="gender" value="Female"/>Female
+    <input type="radio" id="gender" name="gender" value="Other"/>Other<br>
+
+    <label for="Department">Department :</label>
+    <select id="Department">
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="Mechanical">Mechanical</option>
+    </select><br>
+
+    <label for="Skills">Skills :</label>
+    <input type="checkbox" id="Skills" name="java"/>Java
+    <input type="checkbox" id="Skills" name="Python"/>Python
+    <input type="checkbox" id="Skills" name="HTML"/>Html
+    <input type="checkbox" id="Skills" name="CSS"/>CSS<br>
+
+    <label for="Skills">Address :</label>
+    <textarea rows="5" cols="30"></textarea><br>
+
+    <div class="buttons">
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Cancel">
+    </div>
+  </form>
+  </div>
+</body>
+</html>
