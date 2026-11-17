@@ -1,0 +1,63 @@
+<!--
+
+Task 1: Student Profile Card
+Scenario: Create a student profile card with proper spacing.
+
+Requirements:
+1. Create a card with a width of 300px.
+2. Set a background color to light blue.
+3. Apply 20px padding inside the card.
+4. Apply 30px margin around the card.
+5. Add a student name, department and email.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Card</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .card {
+
+            width: 300px;
+            background-color: whitesmoke;
+            padding: 20px;
+            margin: 100px;
+            border: 2px solid rgb(237, 237, 241);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 0 10px gray;
+      
+        }
+        .buttonstyle{
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Student Profile</h2>
+        <img src="https://img.magnific.com/free-vector/user-circles-set_78370-4704.jpg?semt=ais_hybrid&w=740&q=80" alt="dummy" width="100px">
+        <p>Karthikayini</p>
+        <p>Computer Science</p>
+        <p><b>Location: </b>Madurai,TN,India</p>
+        <div class="buttonstyle">
+        <button style="background-color: blue; color: white;border: 1px solid blue;">Follow</button>
+        <button style="color: blue;border: 1px solid blue;"> Message</button>
+        </div>
+    </div>
+
+</body>
+</html>
